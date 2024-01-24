@@ -17,7 +17,7 @@ class MHNfs(pl.LightningModule):
 
         # Load context set
         self.context = torch.unsqueeze(torch.from_numpy(
-            np.load(config.system.path + config.system.dir_training + config.system.name_mol_inputs)
+            np.load(config.system.data.path + config.system.data.dir_training + config.system.data.name_mol_inputs)
         ), 0).to(config.system.ressources.device)
 
         self.context_embedding = torch.ones(1, 512, 1024).to(config.system.ressources.device)
